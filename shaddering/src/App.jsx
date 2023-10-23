@@ -3,6 +3,8 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
+//import { NodeToyTick } from '@nodetoy/react-nodetoy'
+
 import {
   OrbitControls,
   PerspectiveCamera,
@@ -11,6 +13,9 @@ import {
 
 import Scene from "./Scene.jsx"
 import { useThree } from '@react-three/fiber'
+
+import Meteor from "./Meteor"
+import { NodeToyTick } from '@nodetoy/react-nodetoy'
 
 
 
@@ -36,11 +41,15 @@ function App() {
         ground={{height: 100, radius: 300}}
       />
 
-      <PerspectiveCamera makedefault fov={33} position={[-0.09, 16.01, -27.9]} />
-      <OrbitControls target={[0.304, 0.806, 0.427]} maxPolarAngle={Math.PI * 0.45} />
+      <PerspectiveCamera makedefault fov={33} position={[-0.07, 16.41, -24.1]} />
+      <OrbitControls target={[0.02, 0.806, 0.427]} maxPolarAngle={Math.PI * 0.45} />
+
+      <NodeToyTick />
 
       <Suspense fallback = {null} >
         <Scene />
+
+        <Meteor />
       </Suspense>
 
     </>

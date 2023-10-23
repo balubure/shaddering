@@ -1,4 +1,6 @@
 import { useGLTF, useTexture } from "@react-three/drei";
+import { NodeToyMaterial } from "@nodetoy/react-nodetoy";
+import { data as sparklesShader } from "./sparkles-shader";
 
 export default function Scene(){
 
@@ -28,6 +30,10 @@ export default function Scene(){
     return(<>
             <mesh  geometry={nodes.ground.geometry}>
                 <meshBasicMaterial map={ground} />
+            </mesh>
+
+            <mesh  geometry={nodes.ground.geometry}>
+                <NodeToyMaterial data={sparklesShader} />
             </mesh>
 
             <mesh  geometry={nodes.ground2.geometry}>
