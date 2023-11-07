@@ -17,6 +17,8 @@ import { useThree } from '@react-three/fiber'
 import Meteor from "./Meteor"
 import { NodeToyTick } from '@nodetoy/react-nodetoy'
 
+import Beams from './Beams.jsx'
+
 
 
 function App() {
@@ -48,7 +50,7 @@ function App() {
 
       <Suspense fallback = {null} >
         <Scene />
-
+        <Beams />
         <Meteor />
       </Suspense>
 
